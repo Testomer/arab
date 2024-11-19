@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع تعليمي - أم حبيبة بنت أبي سفيان</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f3f4f6, #e2e8f0);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .summary {
+            background: #e2e8f0;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            background: #fef9c3;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question button {
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #3b82f6;
+            color: white;
+            cursor: pointer;
+        }
+        .question button:hover {
+            background: #2563eb;
+        }
+        .correct-answer {
+            margin-top: 0.5rem;
+            color: #16a34a;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>موقع تعليمي: أم حبيبة بنت أبي سفيان</h1>
+    </header>
+    <div class="content">
+        <div class="summary">
+            <h2>التلخيص:</h2>
+            <p>- أم حبيبة بنت أبي سفيان كانت من أوائل المسلمات، وهاجرت للحبشة بسبب اضطهاد أهلها بعد إسلامها.</p>
+            <p>- رغم ارتداد زوجها عن الإسلام، بقيت متمسكة بدينها ولم تضعف.</p>
+            <p>- النبي صلى الله عليه وسلم خطبها عن طريق النجاشي، وكانت من أمهات المؤمنين.</p>
+            <p>- تمثل أم حبيبة نموذجًا للصبر والثبات على الدين رغم التحديات.</p>
+        </div>
+
+        <!-- الأسئلة -->
+        <script>
+            const questions = [
+                { question: "1. من هي أم حبيبة؟", options: ["صحابية جليلة", "جارة النبي", "ابنة عمه"], correct: "صحابية جليلة" },
+                { question: "2. لماذا تميزت أم حبيبة؟", options: ["ثباتها على الدين", "غناها", "قرابتها للنبي"], correct: "ثباتها على الدين" },
+                { question: "3. من هو والد أم حبيبة؟", options: ["أبو سفيان", "عبد الله بن عباس", "علي بن أبي طالب"], correct: "أبو سفيان" },
+                { question: "4. من هو زوج أم حبيبة السابق؟", options: ["عبيد الله بن جحش", "مصعب بن عمير", "أبو بكر الصديق"], correct: "عبيد الله بن جحش" },
+                { question: "5. ما سبب هجرة أم حبيبة إلى الحبشة؟", options: ["اضطهاد قريش للمسلمين", "الدعوة من النجاشي", "طلب النبي"], correct: "اضطهاد قريش للمسلمين" },
+                { question: "6. من هو الملك الذي خطب أم حبيبة للنبي؟", options: ["النجاشي", "هرقل", "كسرى"], correct: "النجاشي" },
+                { question: "7. ما كانت صفة أم حبيبة تجاه دينها؟", options: ["الثبات", "اللين", "التردد"], correct: "الثبات" },
+                { question: "8. ما هي علاقة أم حبيبة بالنبي؟", options: ["زوجته", "ابنة عمه", "أخته بالرضاعة"], correct: "زوجته" },
+                { question: "9. ما هو موقف أم حبيبة عند ارتداد زوجها؟", options: ["تمسكت بدينها", "اتبعت زوجها", "هاجرت معه"], correct: "تمسكت بدينها" },
+                { question: "10. كيف تزوج النبي من أم حبيبة؟", options: ["عبر النجاشي", "بإذن أبيها", "بموافقتها فقط"], correct: "عبر النجاشي" },
+                { question: "11. من هن أمهات المؤمنين؟", options: ["زوجات النبي", "بنات النبي", "أخوات النبي"], correct: "زوجات النبي" },
+                { question: "12. ما معنى أم حبيبة؟", options: ["اسم كنية", "لقب نبوي", "اسم قبيلة"], correct: "اسم كنية" },
+                { question: "13. أين كانت إقامة أم حبيبة عند هجرتها؟", options: ["في الحبشة", "في مكة", "في الطائف"], correct: "في الحبشة" },
+                { question: "14. ما الدرس المستفاد من قصة أم حبيبة؟", options: ["الثبات على الدين", "كثرة المال", "الحفاظ على الأصدقاء"], correct: "الثبات على الدين" },
+                { question: "15. كم استمرت أم حبيبة في الحبشة؟", options: ["10 سنوات", "5 سنوات", "15 سنة"], correct: "10 سنوات" },
+                { question: "16. من الذي ساعد أم حبيبة في زواجها؟", options: ["النجاشي", "أبوها", "النبي"], correct: "النجاشي" },
+                { question: "17. كيف عاشت أم حبيبة بعد زواجها من النبي؟", options: ["في المدينة", "في الحبشة", "في مكة"], correct: "في المدينة" },
+                { question: "18. ما هو لقب النبي؟", options: ["الصادق الأمين", "الملك العظيم", "الشجاع الكريم"], correct: "الصادق الأمين" },
+                { question: "19. ماذا يدل موقف أم حبيبة من زوجها المرتد؟", options: ["الثبات", "الرحمة", "الضعف"], correct: "الثبات" },
+                { question: "20. ما هو الدرس المستفاد من زواج النبي بأم حبيبة؟", options: ["المودة والرحمة", "الثروة", "السيطرة"], correct: "المودة والرحمة" }
+            ];
+
+            questions.forEach((q, index) => {
+                document.write(`
+                    <div class="question" id="q${index + 1}">
+                        <p>${q.question}</p>
+                        ${q.options.map(option => `
+                            <button onclick="checkAnswer('q${index + 1}', this, '${option}')">${option}</button>
+                        `).join('')}
+                        <p class="correct-answer" id="answer-q${index + 1}">الإجابة الصحيحة: ${q.correct}</p>
+                    </div>
+                `);
+            });
+
+            function checkAnswer(questionId, button, userAnswer) {
+                const questionIndex = parseInt(questionId.replace("q", "")) - 1;
+                const correctAnswer = questions[questionIndex].correct;
+                const answerElement = document.getElementById(`answer-${questionId}`);
+
+                if (userAnswer === correctAnswer) {
+                    button.style.backgroundColor = '#16a34a';
+                    answerElement.style.display = 'none';
+                } else {
+                    button.style.backgroundColor = '#dc2626';
+                    answerElement.style.display = 'block';
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
